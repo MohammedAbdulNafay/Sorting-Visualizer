@@ -3,68 +3,76 @@
 <html>
 
     <head>
-        <title> Sort Visualizer</title>
+        <title> Sort Visualization</title>
         <link rel="stylesheet" href="./css/style.css"></link>
-        <script src="./src/Sort.js"></script>
-        <script src="./dependencies/Chart.min.js"></script>
     </head>
 
     <body>
 
-        <h1><center>Sort Visualizer</center></h1>
-        <br/>
+        <header>
+
+            <h1 class="heading">Sorting Visualization</h1>
+
+            <nav>
+
+                <div class="array-inputs">
+
+                    <p>Select Array Size:
+                        <input id="array_size_text" type="text" value="30" size=2 readonly>
+                    </p>
+                    <input id="array_size" type="range" min=10 max=80 step=1 value=30 onchange="updateSelectedSize(this.value);">
+
+                    <p>Select speed of transition:
+                        <input id="transition_speed_text" type="text" value="3" size=1 readonly>
+                    </p>
+                    <input id="transition_speed"  type="range" min=1 max=5 step=1 value=3 onchange="updateSelectedSpeed(this.value);">
+
+                    <button id="generate_array">Generate New Array</button>
+                    
+
+                </div>
+
+                <div class="algorithms">
+
+                    <button>Bubble</button>
+                    <button>Selection</button>
+                    <button>Insertion</button>
+                    <button>Merge</button>
+                    <button>Quick</button>
+                    <button>Heap</button>
+
+                </div>
+
+            </nav>
+
+        </header>
+
+        <section>
+
+            <div id="Info_Cont">
+                <p></p>
+            </div>
+    
+            <div id="array-visualization">
+                
+            </div>
+    
+            <div id="Info_Cont">
+                <p></p>
+            </div>
+    
+        </section>
 
 
-        <input type="button" value="Sort Array" onclick="sortArray()">
-        <input type="button" value="Reset Array" onclick="resetArray()">
-
-        <canvas id="sortChart" width="400" height="250"/>
-
-
-        <script>
-
-            var ctx = document.getElementById('sortChart').getContext('2d');
-            var myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Element 1', 'Element 2', 'Element 3', 'Element 4',
-                    'Element 5', 'Element 6', 'Element 7', 'Element 8',
-                    'Element 9', 'Element 10', 'Element 11', 'Element 12',
-                    'Element 13', 'Element 14', 'Element 15', 'Element 16',
-                    'Element 17', 'Element 18', 'Element 19', 'Element 20',
-                    'Element 21', 'Element 22', 'Element 23', 'Element 24',
-                    'Element 25', 'Element 26', 'Element 27', 'Element 28',
-                    'Element 29', 'Element 30', 'Element 31', 'Element 32',
-                    'Element 33', 'Element 34', 'Element 35', 'Element 36',
-                    'Element 37', 'Element 38', 'Element 39', 'Element 40',],
-                    datasets: [{
-                        data: array,
-                        backgroundColor: "rgba(111, 99, 236, 0.5)",
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    legend: {
-                        display: false
-                    }
-                }
-            });
-
-            function sortArray()
-            {
-                myChart.data.datasets[0].data = sortedArray;
-                myChart.update();
-            }
-
-            function resetArray()
-            {
-                generateArray();
-                bubbleSort(array);
-                myChart.data.datasets[0].data = array;
-                myChart.update();
-            }
-
-        </script>
+        <script src="./src/BaseHelper.js"></script>
+        <script src="./src/visualizationHelper.js"></script>
+        <script src="./src/BubbleSort.js"></script>
+        <script src="./src/SelectionSort.js"></script>
+        <script src="./src/InsertionSort.js"></script>
+        <script src="./src/MergeSort.js"></script>
+        <script src="./src/QuickSort.js"></script>
+        <script src="./src/HeapSort.js"></script>
+        
 
     </body>
 
