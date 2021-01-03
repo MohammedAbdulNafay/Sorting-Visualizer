@@ -1,9 +1,142 @@
-body {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: medium;
+    /* font-weight: bold; */
+    text-transform: capitalize;
+  }
 
-#container {
-    margin: auto;
-    width: 50%;
-    padding:10dpi;
-}
+  .heading {
+    text-align: center;
+    font-size: xxx-large;
+    padding: 25px;
+    background-color: #a29f8d;
+  }
+
+  nav {
+    background-color: #3b3a3a;
+    color: white;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 30% 60%;
+        grid-template-columns: 30% 60%;
+    -webkit-column-gap: 10%;
+            column-gap: 10%;
+    padding: 0% 5%;
+  }
+  
+  nav .array-inputs {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 60% 40%;
+        grid-template-columns: 60% 40%;
+    place-content: center;
+    padding: 5% 0%;
+  }
+  
+  nav .array-inputs #array_size {
+    padding: 5% 0%;
+  }
+  
+  nav .array-inputs #array_size_text {
+    background-color: transparent;
+    color: white;
+    border: none;
+  }
+  
+  nav .array-inputs #transition_speed {
+    padding: 5% 0%;
+  }
+  
+  nav .array-inputs #transition_speed_text {
+    background-color: transparent;
+    color: white;
+    border: none;
+  }
+  
+  nav .array-inputs #generate_array {
+    background-color: #757b41;
+    padding: 5px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    color: white;
+  }
+  
+  nav .array-inputs #generate_array:hover {
+    cursor: pointer;
+  }
+
+  nav .array-inputs #generate_array:disabled {
+    background-color: red;
+  }
+  
+  nav .algorithms {
+    display: grid;
+    grid-template-columns: repeat(6, 16.66667%);
+    place-content: center;
+    padding: 2% 0%;
+  }
+  
+  nav .algorithms button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    padding: 5% 0%;
+    font-size: x-large;
+  }
+  
+  nav .algorithms button:hover {
+    background-color: blue;
+    cursor: pointer;
+  }
+
+  nav .algorithms .algorithm_disabled {
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  nav .algorithms .algorithm_disabled:hover {
+    background-color: transparent;
+  }
+  
+  nav .algorithms .algorithm_selected {
+    background-color: white;
+    color: green;
+  }
+  
+  nav .algorithms .algorithm_selected:hover {
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  nav .algorithms .algorithm_unselected:hover {
+    background-color: blue;
+    cursor: pointer;
+  }
+  
+  section {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 20% 60% 20%;
+        grid-template-columns: 20% 60% 20%;
+  }
+  
+  section #Info_Cont {
+    padding: 20%;
+  }
+  
+  section #array-visualization {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 70vh;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
