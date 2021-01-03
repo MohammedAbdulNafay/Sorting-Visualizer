@@ -1,0 +1,9 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#container {
+    margin: auto;
+    width: 50%;
+    padding:10dpi;
+}

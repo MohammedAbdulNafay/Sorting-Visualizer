@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title> Sort Visualizer</title>
+        <link rel="stylesheet" href="style.css"></link>
+        <script src="Sort.js"></script>
+        <script src="Chart.min.js"></script>
+    </head>
+
+    <body>
+
+        <h1><center>Sort Visualizer</center></h1>
+        <br/>
+
+
+        <input type="button" value="Sort Array" onclick="sortArray()">
+        <input type="button" value="Reset Array" onclick="resetArray()">
+
+        <canvas id="sortChart" width="400" height="250"/>
+
+
+        <script>
+
+            var ctx = document.getElementById('sortChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Element 1', 'Element 2', 'Element 3', 'Element 4',
+                    'Element 5', 'Element 6', 'Element 7', 'Element 8',
+                    'Element 9', 'Element 10', 'Element 11', 'Element 12',
+                    'Element 13', 'Element 14', 'Element 15', 'Element 16',
+                    'Element 17', 'Element 18', 'Element 19', 'Element 20',
+                    'Element 21', 'Element 22', 'Element 23', 'Element 24',
+                    'Element 25', 'Element 26', 'Element 27', 'Element 28',
+                    'Element 29', 'Element 30', 'Element 31', 'Element 32',
+                    'Element 33', 'Element 34', 'Element 35', 'Element 36',
+                    'Element 37', 'Element 38', 'Element 39', 'Element 40',],
+                    datasets: [{
+                        data: array,
+                        backgroundColor: "rgba(111, 99, 236, 0.5)",
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    legend: {
+                        display: false
+                    }
+                }
+            });
+
+            function sortArray()
+            {
+                myChart.data.datasets[0].data = sortedArray;
+                myChart.update();
+            }
+
+            function resetArray()
+            {
+                generateArray();
+                bubbleSort(array);
+                myChart.data.datasets[0].data = array;
+                myChart.update();
+            }
+
+        </script>
+
+    </body>
+
+</html>
